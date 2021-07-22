@@ -12,7 +12,17 @@
 
 ## Demo
 
-Here is a working live demo : https://my-shopper-app.herokuapp.com/
+Here is a working live demo : [Link](https://my-shopper-app.herokuapp.com/)
+
+## Usage
+
+```
+npm install
+```
+
+```
+npm run dev
+```
 
 ## Site
 
@@ -26,7 +36,7 @@ Here is a working live demo : https://my-shopper-app.herokuapp.com/
 
 ### Shopping cart
 
-![](./images/react_shopper_cart_page.png)
+![](./images/react_shopper_cart.png)
 
 ### Payment Feedback Page
 
@@ -36,7 +46,8 @@ Here is a working live demo : https://my-shopper-app.herokuapp.com/
 
 - [React](https://reactjs.org/)
 - [Node.js](https://nodejs.org/en/about/)
-- [Stripe](https://stripe.com/) |
+- [Tailwindcss](https://tailwindcss.com/)
+- [Stripe](https://stripe.com/)
 
 ## [License]()
 
