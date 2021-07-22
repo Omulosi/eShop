@@ -2,7 +2,7 @@
 import React from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import { useQuery} from 'react-query'
+import { useQuery } from "react-query";
 import LoadingSpinner from "../components/LoadingSpinner";
 import formatProductPrice from "../utils/formatProductPrice";
 import AddToCart from "../components/AddToCart";
@@ -10,18 +10,28 @@ import RemoveFromCart from "../components/RemoveFromCart";
 
 export default function Product() {
   const { productId } = useParams();
-  const { data: product, isLoading, isError, error} = useQuery(['Product', productId], () => axios(`/api/products/${productId}`).then((res) => res.data.product))
+  const {
+    data: product,
+    isLoading,
+    isError,
+    error,
+  } = useQuery(["Product", productId], () =>
+    axios(`/api/products/${productId}`).then((res) => res.data.product)
+  );
 
   if (isLoading) {
-    return <LoadingSpinner />
+    return <LoadingSpinner />;
   }
 
   if (isError) {
-    return <div className="text-red-500 font-bold text-center mx-auto">{error.message}</div>
-    
+    return (
+      <div className="text-red-500 font-bold text-center mx-auto">
+        {error.message}
+      </div>
+    );
   }
 
-  const price = formatProductPrice(product)
+  const price = formatProductPrice(product);
 
   return (
     <section className="text-gray-400 bg-gray-900 body-font overflow-hidden">
@@ -45,8 +55,8 @@ export default function Product() {
               <span className="title-font font-medium text-2xl text-white">
                 {price}
               </span>
-              <AddToCart />
-              <RemoveFromCart />
+              <AddToCart product={product} />
+              <RemoveFromCart product={product} />
             </div>
           </div>
         </div>
