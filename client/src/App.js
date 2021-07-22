@@ -11,7 +11,7 @@ import Navbar from "./components/Navbar";
 
 const queryClient = new QueryClient();
 
-const stripePromise = loadStripe(process.env.REACT_APP_STIPE_KEY);
+const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
 
 function App() {
   return (
